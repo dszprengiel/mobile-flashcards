@@ -22,6 +22,15 @@ export default class ListDecks extends Component {
 		  })
 
   }
+    componentWillUpdate() {
+      getDecks()
+        .then(result => {
+          this.setState(() => ({
+            'decks': result
+          }))
+        })
+
+    }
 
   render() {
     const decks = this.state.decks
